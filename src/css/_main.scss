@@ -1,0 +1,49 @@
+.recipe-box {
+  position: relative;
+}
+
+.menu {
+  background-color: green;
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  padding: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  width: 80%;
+  height: 100vh;
+  float: right;
+  padding: 5rem;
+}
+
+.search {
+  margin: 2rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__input {
+    width: 70%;
+  }
+}
+
+.add-recipe {
+  display: flex;
+  flex-direction: column;
+  max-width: 80rem;
+  margin: 0 auto;
+
+  & input[type="text"] {
+    width: 100%;
+  }
+}
