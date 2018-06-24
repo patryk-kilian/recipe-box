@@ -47,3 +47,41 @@
     width: 100%;
   }
 }
+
+.recipe-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe-item {
+  width: 30%;
+  height: 10rem;
+  width: 80%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  &:not(:first-child) {
+    margin-top: 2rem;
+  }
+
+  &__buttons {
+    margin-left: auto;
+    width: 20rem;
+    height: 100%;
+
+    display: flex;
+  }
+
+  &__button {
+    width: 50%;
+  }
+
+  &__image {
+    width: 10rem;
+  }
+}
