@@ -1,3 +1,4 @@
+import "focus-visible/dist/focus-visible.js";
 import React from "react";
 import Menu from "./Menu";
 import Main from "./Main";
