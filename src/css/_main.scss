@@ -101,6 +101,9 @@
     width: 50%;
     @include button-reset;
     transition: all .2s ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover { background-color: $color3; }
 

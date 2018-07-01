@@ -8,7 +8,10 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="menu">
-        <SearchForm heading="Search for recipes" />
+        <SearchForm
+          searchChange={this.props.searchChange}
+          heading="Search for recipes"
+        />
         <Link className="btn" to="/add-recipe">
           New recipe
         </Link>

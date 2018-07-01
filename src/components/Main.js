@@ -1,5 +1,6 @@
 import React from "react";
 import AddRecipeForm from "./AddRecipeForm";
+import EditRecipeForm from "./EditRecipeForm";
 import RecipeList from "./RecipeList";
 import RecipeDetails from "./RecipeDetails";
 import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -16,14 +17,29 @@ class Main extends React.Component {
             )}
           />
           <Route
-            exact
-            path="/"
+            path="/edit-recipe/:index"
             render={props => (
-              <RecipeList {...props} recipes={this.props.recipes} />
+              <EditRecipeForm
+                {...props}
+                index={props.match.params.index}
+                recipe={this.props.recipes[props.match.params.index]}
+                addRecipe={this.props.addRecipe}
+                updateRecipe={this.props.updateRecipe}
+              />
             )}
           />
           <Route
             exact
+            path="/"
+            render={props => (
+              <RecipeList
+                {...props}
+                deleteRecipe={this.props.deleteRecipe}
+                recipes={this.props.recipes}
+              />
+            )}
+          />
+          <Route
             path="/recipe/:index"
             render={props => (
               <RecipeDetails
@@ -39,5 +55,3 @@ class Main extends React.Component {
 }
 
 export default Main;
-
-// recipe={this.props.recipes[props.match.params.index]}

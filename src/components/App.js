@@ -7,7 +7,12 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends React.Component {
   state = {
-    recipes: {}
+    recipes: {},
+    searchfield: ""
+  };
+
+  onSearchChange = event => {
+    this.setState({ searchfield: event.target.value });
   };
 
   componentDidMount() {
@@ -27,17 +32,49 @@ class App extends React.Component {
     this.setState({ recipes });
   };
 
+  deleteRecipe = key => {
+    const recipes = { ...this.state.recipes };
+    delete recipes[key];
+    this.setState({ recipes });
+  };
+
+  updateRecipe = (key, updatedRecipe) => {
+    const recipes = { ...this.state.recipes };
+    recipes[key] = updatedRecipe;
+    this.setState({ recipes });
+  };
+
   loadSampleRecipes = () => {
     this.setState({ recipes: sampleRecipes });
     console.log(this.state.recipes);
   };
 
   render() {
+    let filteredRecipes = {};
+    const filteredKeys = Object.keys(this.state.recipes).filter(key => {
+      return this.state.recipes[key].name
+        .toLowerCase()
+        .includes(this.state.searchfield.toLowerCase());
+    });
+    {
+      filteredKeys.forEach(key => {
+        filteredRecipes[key] = this.state.recipes[key];
+      });
+    }
+
     return (
       <Router>
         <div className="recipe-box">
-          <Menu loadSampleRecipes={this.loadSampleRecipes} />
-          <Main addRecipe={this.addRecipe} recipes={this.state.recipes} />
+          <Menu
+            searchChange={this.onSearchChange}
+            loadSampleRecipes={this.loadSampleRecipes}
+          />
+          <Main
+            deleteRecipe={this.deleteRecipe}
+            addRecipe={this.addRecipe}
+            recipes={filteredRecipes}
+            updateRecipe={this.updateRecipe}
+          />
         </div>
       </Router>
     );

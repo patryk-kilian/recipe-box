@@ -15,12 +15,18 @@ class RecipeItem extends React.Component {
           {textTruncate(name, 30)}
         </Link>
         <div className="recipe-item__buttons">
-          <button className="recipe-item__button recipe-item__button--delete">
+          <button
+            onClick={() => this.props.deleteRecipe(this.props.index)}
+            className="recipe-item__button recipe-item__button--delete"
+          >
             <Icon name="bin" size="40" color="#f33" />
           </button>
-          <button className="recipe-item__button recipe-item__button--edit">
+          <Link
+            to={`/edit-recipe/${this.props.index}`}
+            className="recipe-item__button recipe-item__button--edit"
+          >
             <Icon name="pencil " size="40" color="#00b300" />
-          </button>
+          </Link>
         </div>
       </li>
     );
