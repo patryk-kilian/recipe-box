@@ -12,15 +12,18 @@ class Menu extends React.Component {
           searchChange={this.props.searchChange}
           heading="Search for recipes"
         />
-        <Link className="btn" to="/add-recipe">
+        <Link className="btn menu__button" to="/add-recipe">
           New recipe
         </Link>
-        <button className="btn" onClick={this.props.loadSampleRecipes}>
-          Load sample recipes
-        </button>
-        <Link className="btn" to="/">
+        <Link className="btn menu__button" to="/">
           Recipe list
         </Link>
+        <button
+          className="btn menu__button"
+          onClick={this.props.loadSampleRecipes}
+        >
+          Load sample recipes
+        </button>
       </div>
     );
   }

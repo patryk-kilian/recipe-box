@@ -1,9 +1,12 @@
 //COLORS
+$color1-light: #c3e4f1;
 $color1:#a8d8ea;
 $color2: #aa96da;
+$color2-darker: #8164c8;
 $color3: #fcbad3;
 $color4: #ffffd2;
-$text-color: #1a1a1a;
+$color4-darker: #ffff9f;
+$text-color: #414141;
 
 html {
   font-size: 62.5%;
@@ -14,6 +17,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 2rem;
   color: $text-color;
+
 }
 
 img {
@@ -43,7 +47,6 @@ a {
   margin: 5px 0;
   border-radius: 4px;
   @include button-reset;
-  background-color: $color2;
   color: #fff;
   padding: .8rem;
   transition: all .2s;
@@ -51,10 +54,6 @@ a {
   &:active {
     transform: translateY(1px);
     filter: saturate(150%);
-  }
-
-  &:hover {
-    background-color:#8164c8;
   }
 
   &:focus {

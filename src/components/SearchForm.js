@@ -11,9 +11,6 @@ class SearchForm extends React.Component {
             type="search"
             className="search__input"
           />
-          <button type="submit" className="btn search__button">
-            search
-          </button>
         </form>
       </div>
     );
