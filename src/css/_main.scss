@@ -84,7 +84,7 @@
   width: 80%;
   background-color: #ffffff;
   border: 1px solid $color3;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 10px rgba(101, 90, 86, 0.2);
   border-radius: 5px;
   overflow: hidden;
 
@@ -103,6 +103,8 @@
     transition: all .2s;
     display: inline-block;
     word-wrap: break-word;
+    transform: rotate(0deg);
+    backface-visibility: hidden;
 
     &:hover {
       color: $color2;
@@ -157,15 +159,52 @@
   }
 }
 
-.text-new-line {
-  display: block;
-  &:not(:first-child) {
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  &__heading {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4rem;
+    letter-spacing: 2px;
+  }
+
+  &__image {
+    width: 45%;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  &__ingredients {
+    width: 45%;
+    padding: 2rem;
+    background-color: #ffff39;
+    text-align: center;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  &__ingredient {
+    margin-top: 5px;
+  }
+
+  &__instruction {
+    margin-top: 4rem;
+  }
+
+  &__instruction-step {
     margin-top: 2rem;
+    @include clearfix;
+
+    &--number {
+      display: inline-block;
+      background-color: $color3;
+      padding: 1rem 1.5rem;
+      border-radius: 50%;
+      margin-right: 2rem;
+      float: left;
+    }
+
   }
 }
-
-// .icon-pencil {
-//   width: 6rem !important;
-//   height: 6rem !important;
-//   fill: red;
-// }

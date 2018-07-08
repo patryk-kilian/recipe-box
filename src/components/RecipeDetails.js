@@ -6,18 +6,25 @@ class RecipeDetails extends React.Component {
       const { name, ingredients, image, instruction } = this.props.recipe;
       return (
         <div className="details">
-          <img src={image} alt="" />
-          <p>{name}</p>
-          <ul>
-            {ingredients.split("/").map(el => {
-              return <li>{el}</li>;
+          <h1 className="details__heading">{name}</h1>
+          <img className="details__image" src={image} alt="" />
+          <ul className="details__ingredients">
+            {ingredients.split("@").map(el => {
+              return <li className="details__ingredient">{el}</li>;
             })}
           </ul>
-          <p>
-            {instruction.split("/").map(el => {
-              return <span className="text-new-line">{el}</span>;
+          <ul className="details__instruction">
+            {instruction.split("@").map((el, i) => {
+              return (
+                <li className="details__instruction-step">
+                  <span className="details__instruction-step--number">
+                    {i + 1}
+                  </span>{" "}
+                  <span className="details__instruction-step--text">{el}</span>
+                </li>
+              );
             })}
-          </p>
+          </ul>
         </div>
       );
     } else {
