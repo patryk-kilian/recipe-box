@@ -1,0 +1,11 @@
+{
+  "runtime~main.js": "/recipe-box/static/js/runtime~main.b16c8721.js",
+  "runtime~main.js.map": "/recipe-box/static/js/runtime~main.b16c8721.js.map",
+  "vendors.js": "/recipe-box/static/js/vendors.1b089e44.chunk.js",
+  "vendors.js.map": "/recipe-box/static/js/vendors.1b089e44.chunk.js.map",
+  "main.css": "/recipe-box/static/css/main.7fd0ebf7.chunk.css",
+  "main.js": "/recipe-box/static/js/main.c1082463.chunk.js",
+  "main.js.map": "/recipe-box/static/js/main.c1082463.chunk.js.map",
+  "static/media/icons.svg": "/recipe-box/static/media/icons.a5fb8086.svg",
+  "index.html": "/recipe-box/index.html"
+}
