@@ -30,7 +30,7 @@ class Main extends React.Component {
           />
           <Route
             exact
-            path="/"
+            path="{process.env.PUBLIC_URL + '/'}"
             render={props => (
               <RecipeList
                 {...props}

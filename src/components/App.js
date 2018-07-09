@@ -62,7 +62,7 @@ class App extends React.Component {
     });
 
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="recipe-box">
           <Menu
             searchChange={this.onSearchChange}
