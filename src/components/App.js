@@ -45,8 +45,8 @@ class App extends React.Component {
   };
 
   loadSampleRecipes = () => {
-    this.setState({ recipes: sampleRecipes });
-    console.log(this.state.recipes);
+    const recipes = { ...this.state.recipes, ...sampleRecipes };
+    this.setState({ recipes });
   };
 
   render() {
@@ -56,11 +56,10 @@ class App extends React.Component {
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });
-    {
-      filteredKeys.forEach(key => {
-        filteredRecipes[key] = this.state.recipes[key];
-      });
-    }
+
+    filteredKeys.forEach(key => {
+      filteredRecipes[key] = this.state.recipes[key];
+    });
 
     return (
       <Router>

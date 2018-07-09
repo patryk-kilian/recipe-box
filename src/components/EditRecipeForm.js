@@ -27,10 +27,10 @@ class EditRecipeForm extends React.Component {
           </label>
           <label>
             Recipe Ingredients:
-            <input
+            <textarea
               name="ingredients"
               type="text"
-              placeholder="Ingredients"
+              placeholder="Separate each ingredient by @ sign, for example: 1/2 cup balsamic vinegar@1 tablespoon olive oil"
               value={ingredients}
               onChange={this.handleChange}
             />
@@ -45,14 +45,18 @@ class EditRecipeForm extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-          Instruction to make this great dish:
-          <textarea
-            name="instruction"
-            placeholder="Instruction"
-            value={instruction}
-            onChange={this.handleChange}
-          />
-          <Link to="/">Save</Link>
+          <label>
+            Instruction to make this great dish:
+            <textarea
+              name="instruction"
+              placeholder="Separate each step by @ sign"
+              value={instruction}
+              onChange={this.handleChange}
+            />
+          </label>
+          <Link className="btn add-recipe__button" to="/">
+            Save
+          </Link>
         </form>
       );
     } else {

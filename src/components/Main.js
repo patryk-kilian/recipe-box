@@ -3,7 +3,7 @@ import AddRecipeForm from "./AddRecipeForm";
 import EditRecipeForm from "./EditRecipeForm";
 import RecipeList from "./RecipeList";
 import RecipeDetails from "./RecipeDetails";
-import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 class Main extends React.Component {
   render() {

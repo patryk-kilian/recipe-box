@@ -5,7 +5,7 @@ import { textTruncate } from "../helpers";
 
 class RecipeItem extends React.Component {
   render() {
-    const { name, ingredients, image, instruction } = this.props.recipes;
+    const { name, image } = this.props.recipes;
     return (
       <li className="recipe-item">
         <figure className="recipe-item__fig">

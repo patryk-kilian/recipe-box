@@ -23,38 +23,32 @@ class AddRecipeForm extends React.Component {
       <form action="" className="add-recipe" onSubmit={this.createRecipe}>
         <label>
           Recipe Name:
-          <input
-            name="name"
-            ref={this.nameRef}
-            type="text"
-            placeholder="Name"
-          />
+          <input name="name" ref={this.nameRef} type="text" />
         </label>
         <label>
           Recipe Ingredients:
-          <input
+          <textarea
             ref={this.ingredientsRef}
             name="ingredients"
             type="text"
-            placeholder="Ingredients"
+            placeholder="Separate each ingredient by @ sign, for example: 1/2 cup balsamic vinegar@1 tablespoon olive oil"
           />
         </label>
         <label>
           Optional Image Url:
-          <input
-            ref={this.imageRef}
-            name="image"
-            type="text"
-            placeholder="Image Url"
+          <input ref={this.imageRef} name="image" type="text" />
+        </label>
+        <label>
+          Instruction to make this great dish:
+          <textarea
+            ref={this.instructionRef}
+            name="instruction"
+            placeholder="Separate each step by @ sign"
           />
         </label>
-        Instruction to make this great dish:
-        <textarea
-          ref={this.instructionRef}
-          name="instruction"
-          placeholder="Instruction"
-        />
-        <button type="submit">Add Recipe +</button>
+        <button className="btn add-recipe__button" type="submit">
+          Add Recipe +
+        </button>
       </form>
     );
   }

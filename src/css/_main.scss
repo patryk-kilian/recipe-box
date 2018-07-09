@@ -59,16 +59,6 @@
   }
 }
 
-.add-recipe {
-  display: flex;
-  flex-direction: column;
-  max-width: 80rem;
-  margin: 0 auto;
-
-  & input[type="text"] {
-    width: 100%;
-  }
-}
 
 .recipe-list {
   list-style-type: none;
@@ -191,6 +181,7 @@
 
   &__instruction {
     margin-top: 4rem;
+    width: 100%;
   }
 
   &__instruction-step {
@@ -208,3 +199,58 @@
 
   }
 }
+
+.add-recipe {
+  max-width: 80rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  & input,
+  & textarea  {
+    background-color: transparent;
+    border: none;
+    background-color: #fddbe8;
+    border: 3px solid transparent;
+    margin-top: 5px;
+    outline: none;
+    transition: border .2s;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.3);
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    color: inherit;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      border-bottom: 3px solid $color2;
+    }
+  }
+
+  & textarea {
+    resize: none;
+    height: 16rem;
+    width: 100%;
+
+    &[name="ingredients"] {
+      height: 8rem;
+    }
+  }
+
+  & label {
+    margin-top: 1rem;
+  }
+
+  &__button {
+    background-color: $color2;
+    margin-top: 2rem;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background-color: $color2-darker;
+    }
+  }
+
+}
+
