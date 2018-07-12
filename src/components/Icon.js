@@ -7,10 +7,4 @@ const Icon = ({ name, color, size }) => (
   </svg>
 );
 
-// Icon.propTypes = {
-//   name: React.PropTypes.string.isRequired,
-//   color: React.PropTypes.string,
-//   size: React.PropTypes.number
-// };
-
 export default Icon;

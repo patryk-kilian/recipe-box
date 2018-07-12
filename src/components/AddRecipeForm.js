@@ -23,7 +23,7 @@ class AddRecipeForm extends React.Component {
       <form action="" className="add-recipe" onSubmit={this.createRecipe}>
         <label>
           Recipe Name:
-          <input name="name" ref={this.nameRef} type="text" />
+          <input name="name" ref={this.nameRef} type="text" required />
         </label>
         <label>
           Recipe Ingredients:
@@ -32,10 +32,11 @@ class AddRecipeForm extends React.Component {
             name="ingredients"
             type="text"
             placeholder="Separate each ingredient by @ sign, for example: 1/2 cup balsamic vinegar@1 tablespoon olive oil"
+            required
           />
         </label>
         <label>
-          Optional Image Url:
+          Image Url(optional):
           <input ref={this.imageRef} name="image" type="text" />
         </label>
         <label>
@@ -44,6 +45,7 @@ class AddRecipeForm extends React.Component {
             ref={this.instructionRef}
             name="instruction"
             placeholder="Separate each step by @ sign"
+            required
           />
         </label>
         <button className="btn add-recipe__button" type="submit">

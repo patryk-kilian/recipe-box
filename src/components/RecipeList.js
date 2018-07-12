@@ -1,21 +1,28 @@
 import React from "react";
 import RecipeItem from "./RecipeItem";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class RecipeList extends React.Component {
   render() {
     return (
-      <ul className="recipe-list">
+      <TransitionGroup component="ul" className="recipe-list">
         {Object.keys(this.props.recipes).map(key => {
           return (
-            <RecipeItem
-              deleteRecipe={this.props.deleteRecipe}
+            <CSSTransition
+              classNames="item"
               key={key}
-              index={key}
-              recipes={this.props.recipes[key]}
-            />
+              timeout={{ enter: 250, exit: 250 }}
+            >
+              <RecipeItem
+                deleteRecipe={this.props.deleteRecipe}
+                key={key}
+                index={key}
+                recipes={this.props.recipes[key]}
+              />
+            </CSSTransition>
           );
         })}
-      </ul>
+      </TransitionGroup>
     );
   }
 }

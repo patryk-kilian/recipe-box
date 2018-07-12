@@ -1,4 +1,5 @@
 import React from "react";
+import defaultImage from "../css/images/default.jpg";
 
 class RecipeDetails extends React.Component {
   render() {
@@ -7,7 +8,15 @@ class RecipeDetails extends React.Component {
       return (
         <div className="details">
           <h1 className="details__heading">{name}</h1>
-          <img className="details__image" src={image} alt="" />
+          <img
+            className="details__image"
+            src={image}
+            alt=""
+            onError={e => {
+              e.target.onError = null;
+              e.target.src = `${defaultImage}`;
+            }}
+          />
           <ul className="details__ingredients">
             {ingredients.split("@").map((el, i) => {
               return (

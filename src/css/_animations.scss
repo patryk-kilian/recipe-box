@@ -1,0 +1,17 @@
+.item-enter {
+  transition: all .5s;
+  transform: translateX(-120%);
+
+  &.item-enter-active {
+    transform: translateX(0);
+  }
+}
+
+.item-exit {
+  transition: all .5s;
+  transform: translateX(0);
+
+  &.item-exit-active {
+    transform: translateX(-120%);
+  }
+}

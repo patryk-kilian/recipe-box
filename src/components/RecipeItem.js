@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Icon from "./Icon";
 import { textTruncate } from "../helpers";
+import defaultImage from "../css/images/default.jpg";
 
 class RecipeItem extends React.Component {
   render() {
@@ -9,10 +10,18 @@ class RecipeItem extends React.Component {
     return (
       <li className="recipe-item">
         <figure className="recipe-item__fig">
-          <img className="recipe-item__image" src={image} alt="" />
+          <img
+            className="recipe-item__image"
+            src={image}
+            alt=""
+            onError={e => {
+              e.target.onError = null;
+              e.target.src = `${defaultImage}`;
+            }}
+          />
         </figure>
         <Link className="recipe-item__link" to={`/recipe/${this.props.index}`}>
-          {textTruncate(name, 30)}
+          {textTruncate(name, 35)}
         </Link>
         <div className="recipe-item__buttons">
           <button

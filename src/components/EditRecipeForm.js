@@ -23,6 +23,7 @@ class EditRecipeForm extends React.Component {
               placeholder="Name"
               value={name}
               onChange={this.handleChange}
+              required
             />
           </label>
           <label>
@@ -33,10 +34,11 @@ class EditRecipeForm extends React.Component {
               placeholder="Separate each ingredient by @ sign, for example: 1/2 cup balsamic vinegar@1 tablespoon olive oil"
               value={ingredients}
               onChange={this.handleChange}
+              required
             />
           </label>
           <label>
-            Optional Image Url:
+            Image Url(optional):
             <input
               name="image"
               type="text"
@@ -52,6 +54,7 @@ class EditRecipeForm extends React.Component {
               placeholder="Separate each step by @ sign"
               value={instruction}
               onChange={this.handleChange}
+              required
             />
           </label>
           <Link className="btn add-recipe__button" to="/">

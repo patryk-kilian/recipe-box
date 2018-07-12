@@ -9,14 +9,28 @@
   width: 20%;
   position: fixed;
   padding: 1.2rem;
+  z-index: 100;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+    height: 13rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    border: none;
+  }
+
   &__button {
     padding: 1rem 2rem;
     background-color: $color2;
+
+    @media only screen and (max-width: 800px) {
+     margin-right: 5px;
+    }
 
     &:hover {
       background-color: $color2-darker;
@@ -29,7 +43,14 @@
   min-height: 100vh;
   float: right;
   padding: 5rem;
-  background: linear-gradient(to right, $color4, $color4-darker)
+  background: linear-gradient(to right, $color4, $color4-darker);
+
+
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+    margin-top: 13rem;
+    min-height: 86vh;
+  }
 }
 
 .search {
@@ -37,6 +58,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: 800px) {
+    margin: 0;
+    margin-right: 5px;
+  }
 
   &__form {
     display: flex;
@@ -69,7 +95,6 @@
 }
 
 .recipe-item {
-  width: 30%;
   height: 10rem;
   width: 80%;
   background-color: #ffffff;
@@ -77,6 +102,10 @@
   box-shadow: 0 5px 10px rgba(101, 90, 86, 0.2);
   border-radius: 5px;
   overflow: hidden;
+
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+  }
 
   display: flex;
   align-items: center;
@@ -88,11 +117,12 @@
   &__link {
     margin-left: 4rem;
     text-transform: uppercase;
+    text-align: center;
     letter-spacing: 1px;
-    line-height: 5rem;
+    width: 60%;
+    line-height: 3rem;
     transition: all .2s;
     display: inline-block;
-    word-wrap: break-word;
     transform: rotate(0deg);
     backface-visibility: hidden;
 
@@ -129,8 +159,12 @@
 
   &__fig {
     height: 100%;
-    width: 12%;
+    width: 15%;
     position: relative;
+
+    @media only screen and (max-width: 1200px) {
+      width: 20%;
+    }
 
     &::after {
       content: "";
