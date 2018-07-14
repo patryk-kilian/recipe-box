@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 50em) {
     width: 100%;
     height: 13rem;
     flex-direction: row;
@@ -24,11 +24,11 @@
     border: none;
   }
 
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 45em) {
     justify-content: center;
   }
 
-  @media only screen and (max-width: 440px) {
+  @media only screen and (max-width: 27.5em) {
     height: 20rem;
   }
 
@@ -40,7 +40,7 @@
       background-color: $color2-darker;
     }
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 50em) {
      margin-right: 5px;
     }
 
@@ -55,13 +55,13 @@
   background: linear-gradient(to right, $color4, $color4-darker);
 
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 50em) {
     width: 100%;
     margin-top: 13rem;
     min-height: 86vh;
   }
 
-  @media only screen and (max-width: 440px) {
+  @media only screen and (max-width: 27.5em) {
     margin-top: 20rem;
   }
 }
@@ -72,12 +72,12 @@
   flex-direction: column;
   align-items: center;
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 50em) {
     margin: 0;
     margin-right: 5px;
   }
 
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 45em) {
     width: 100%;
   }
 
@@ -130,11 +130,11 @@
     margin-top: 2rem;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 50em) {
     width: 100%;
   }
 
-  @media only screen and (max-width: 440px) {
+  @media only screen and (max-width: 27.5em) {
     height: 12.5rem;
   }
 
@@ -186,11 +186,11 @@
     width: 15%;
     position: relative;
 
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 75em) {
       width: 20%;
     }
 
-    @media only screen and (max-width: 440px) {
+    @media only screen and (max-width: 27.5em) {
       display: none;
     }
 
@@ -228,7 +228,7 @@
     width: 45%;
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
 
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 45em) {
       width: 100%;
       margin-bottom: 2rem;
     }
@@ -241,7 +241,7 @@
     text-align: center;
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
 
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 45em) {
       width: 100%;
     }
   }
